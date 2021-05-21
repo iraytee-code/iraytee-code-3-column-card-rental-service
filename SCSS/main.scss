@@ -1,0 +1,211 @@
+@import "mixin";
+@import "colorscheme";
+
+
+// screen break points and media 
+
+$bp-large: 81.25em; // 1300px
+$bp-medium: 48em; // 768px
+$bp-small: 20em; // 320px
+
+
+// resets
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Big Shoulders Display', cursive;;
+}
+
+
+//page background 
+
+.background{
+    box-sizing: border-box;
+    width: 100%;
+    // max-height: 100vh;
+    min-height: 100vh;
+    background-color: $background-color;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mQ($bp-medium,$bp-small){
+    max-width: 768px;
+    min-width: 320px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 50px;
+    }
+}
+
+// box styling
+
+.holding-container{
+    box-sizing: border-box;
+    max-width: 900px;
+    min-width: 769px;
+    margin: 0 auto;
+    display: flex;
+    border-radius: 10px;
+    background:$color-card-orange;
+
+    @include mQ($bp-medium,$bp-small){
+        box-sizing: border-box;
+        max-width: 600px;
+        min-width: 300px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .sedan-card{
+        box-sizing: border-box;
+        border-radius: 10px;
+        background:$color-card-orange;
+
+        @include mQ($bp-medium,$bp-small){
+            width: 100%;
+        }
+
+    }
+
+    .suv-card{
+        box-sizing: border-box;
+        border-radius: 10px;
+        background: $color-card-blue;
+
+        @include mQ($bp-medium,$bp-small){
+            width: 100%;
+        }
+    }
+
+    .luxury-card{
+        box-sizing: border-box;
+        border-radius: 10px;
+        background: $color-card-green;
+
+        @include mQ($bp-medium,$bp-small){
+            width: 100%;
+        }
+    }
+
+
+    .card-content{
+        display: block;
+        box-sizing: border-box;
+        margin:auto;
+        width: 80%;
+       
+
+        .car-logo{
+            box-sizing: border-box;
+            padding: 20px 0;
+        }
+
+        .car-type{
+            box-sizing: border-box;
+            padding: 10px 0;
+
+            h1{
+                color: $color-text-white;
+                font-size: 40px;
+
+                @include mQ($bp-medium,$bp-small){
+                    font-size: 40px;
+                }
+            }
+
+            
+        }
+
+        .car-info{
+            box-sizing: border-box;
+            padding: 0;
+
+            p{
+                color: $color-text-white;
+                line-height: 1.5;
+            }
+        }
+
+        .button-sedan{
+            box-sizing: border-box;
+            padding: 40px 0;
+
+            button{
+                box-sizing: border-box;
+                padding: 10px 25px;
+                border-radius: 25px;
+
+                // typography
+                font-size: 16px;
+                cursor: pointer;
+                color: $color-button-orange;
+            }
+
+            button:active{
+                background-color:$color-card-orange;
+                color: $color-text-white;
+                border: solid 2px $color-button-border ;
+            }
+        }
+
+        .button-suv{
+            box-sizing: border-box;
+            padding: 20px 0;
+
+            button{
+                box-sizing: border-box;
+                padding: 10px 25px;
+                border-radius: 25px;
+
+                // typography
+                font-size: 16px;
+                color: $color-button-blue;
+                cursor: pointer;
+            }
+
+            button:active{
+                background-color:$color-card-blue;
+                color: $color-text-white;
+                border: solid 2px $color-button-border ;
+            }
+        }
+
+        .button-luxury{
+            box-sizing: border-box;
+            padding: 20px 0;
+
+            button{
+                box-sizing: border-box;
+                padding: 10px 25px;
+                border-radius: 25px;
+
+                // typography
+                font-size: 16px;
+                color: $color-card-green;
+                cursor: pointer;
+            }
+
+            button:active{
+                background-color:$color-card-green;
+                color: $color-text-white;
+                border: solid 2px $color-button-border ;
+            }
+        }
+    }
+
+    
+}
+
+
+
+
+
